@@ -12,7 +12,7 @@ func dbConn() (db *sql.DB) {
     dbDriver := "mysql"
     dbUser := "docker"
     dbPass := "docker"
-    dbName := "test_db"
+    dbName := "test_db" //sin docker o solo docker para la db: db cambiar por localhost 
     db, err := sql.Open(dbDriver, dbUser+":"+dbPass+"@tcp(db:3306)/"+dbName)
     if err != nil {
         panic(err.Error())

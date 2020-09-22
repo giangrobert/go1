@@ -1,5 +1,8 @@
 #https://qiita.com/osk_kamui/items/1539ade3c23f58b89f80
 
+go get -u gorm.io/gorm 
+go get -u gorm.io/driver/mysql
+
 Then run command below
 
 	docker-compose up --build

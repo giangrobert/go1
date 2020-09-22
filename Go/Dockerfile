@@ -8,4 +8,4 @@ RUN go get github.com/cespare/reflex
 
 EXPOSE 8080
 
-CMD make watch
+#CMD make watch

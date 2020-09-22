@@ -1,6 +1,6 @@
 package main
 
-import(
+import (
         _ "github.com/go-sql-driver/mysql"      // La librería que nos permite conectar a MySQL
         "database/sql"                          // Interactuar con bases de datos
         "fmt"                                   // Imprimir mensajes y esas cosas
