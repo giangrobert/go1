@@ -11,7 +11,7 @@ import (
 type Person struct {
 	gorm.Model
 	Name string
-	Age  int
+	Age  string
 }
 
 func main() {
@@ -35,12 +35,13 @@ func main() {
 		})
 	})
 
-	r.POST("/users/", func(c *gin.Context) {
-		name := c.PostForm("name")
-		lastname := c.PostForm("lastname")
+	r.POST("/persons/", func(c *gin.Context) {
+		d := Person{Name: c.PostForm("name"), Age: c.PostForm("age")}
+		db.Create(&d)
+
 		c.JSON(200, gin.H{ // serializador de gin
-			"name":     name,
-			"lastname": lastname,
+			"name": d.Name,
+			"age":  d.Age,
 		})
 	})
 
