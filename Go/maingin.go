@@ -10,14 +10,14 @@ func main() {
 		})
 	})
 
-	// For each matched request Context will hold the route definition
 	r.POST("/users/", func(c *gin.Context) {
-		id := c.Query("id")
 		name := c.PostForm("name")
-		c.JSON(200, gin.H{
-			"message": name + " id=" + id,
+		lastname := c.PostForm("lastname")
+		c.JSON(200, gin.H{ // serializador de gin
+			"name":     name,
+			"lastname": lastname,
 		})
 	})
 
-	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	r.Run()
 }
