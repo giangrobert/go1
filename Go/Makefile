@@ -1,6 +1,6 @@
 #instalar>go get github.com/cespare/reflex
 build:
-	go build -o server main.go
+	go build -o server maingin.go
 
 run: build
 	./server
